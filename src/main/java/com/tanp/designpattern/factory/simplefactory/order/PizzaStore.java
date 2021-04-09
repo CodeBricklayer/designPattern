@@ -7,8 +7,13 @@ package com.tanp.designpattern.factory.simplefactory.order;
  */
 public class PizzaStore {
     public static void main(String[] args) {
+        //传统方式
 //        new OrderPizza();
-        new OrderPizza(new SimpleFactory());
+
+        //工厂模式
+//        new OrderPizza(new SimpleFactory());
+        //静态工厂
+        new OrderPizza2();
         System.out.println("退出程序");
     }
 }

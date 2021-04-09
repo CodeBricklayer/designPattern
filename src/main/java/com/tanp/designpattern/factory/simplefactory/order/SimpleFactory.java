@@ -32,4 +32,25 @@ public class SimpleFactory {
         }
         return pizza;
     }
+
+    /**
+     * 简单工厂模式也叫静态工厂模式
+     * @param orderType
+     * @return
+     */
+    public static Pizza createPizza2(String orderType){
+        Pizza  pizza= null;
+        if ("greek".equals(orderType)){
+            pizza = new GreekPizza();
+            pizza.setName(" 希腊披萨 ");
+        }else if ("cheese".equals(orderType)){
+            pizza = new CheesePizza();
+            pizza.setName(" 奶酪披萨 ");
+            //新增胡椒披萨
+        }else if ("pepper".equals(orderType)){
+            pizza = new PepperPizza();
+            pizza.setName(" 胡椒披萨 ");
+        }
+        return pizza;
+    }
 }
