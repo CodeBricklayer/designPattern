@@ -1,7 +1,5 @@
 package com.tanp.designpattern.prototype.improve;
 
-import java.util.Calendar;
-
 /**
  * @author CodeBricklayer
  * @date 2021/4/10 14:40
@@ -14,6 +12,18 @@ public class Sheep implements Cloneable {
     private int age;
 
     private String color;
+
+    private String address = "蒙古羊";
+
+    private Sheep friend;
+
+    public void setFriend(Sheep friend) {
+        this.friend = friend;
+    }
+
+    public Sheep getFriend() {
+        return friend;
+    }
 
     public Sheep(String name, int age, String color) {
         this.name = name;
@@ -51,6 +61,8 @@ public class Sheep implements Cloneable {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", color='" + color + '\'' +
+                ", address='" + address + '\'' +
+                ", friend=" + friend +
                 '}';
     }
 
