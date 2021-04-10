@@ -7,9 +7,9 @@ import java.io.*;
  * @date 2021/4/10 15:40
  * @description TODO
  */
-public class DeepPrototype implements Serializable,Cloneable {
+public class DeepPrototype implements Serializable, Cloneable {
 
-    private static  final  long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     public String name;
 
@@ -23,6 +23,7 @@ public class DeepPrototype implements Serializable,Cloneable {
 
     /**
      * 深拷贝-方式1 使用clone方法
+     *
      * @return
      * @throws CloneNotSupportedException
      */
@@ -40,7 +41,7 @@ public class DeepPrototype implements Serializable,Cloneable {
     /**
      * 深拷贝- 方式2 通过对象的序列化实现深拷贝（推荐使用）
      */
-    public Object deepClone(){
+    public Object deepClone() {
         //创建流对象
         ByteArrayOutputStream bos = null;
         ObjectOutputStream oos = null;
@@ -54,18 +55,18 @@ public class DeepPrototype implements Serializable,Cloneable {
             oos.writeObject(this);
             bis = new ByteArrayInputStream(bos.toByteArray());
             ois = new ObjectInputStream(bis);
-            DeepPrototype copyObj = (DeepPrototype)ois.readObject();
+            DeepPrototype copyObj = (DeepPrototype) ois.readObject();
             return copyObj;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
-        }finally {
+        } finally {
             try {
                 bos.close();
                 oos.close();
                 bis.close();
                 ois.close();
-            }catch (Exception e2){
+            } catch (Exception e2) {
                 System.out.println(e2.getMessage());
             }
         }

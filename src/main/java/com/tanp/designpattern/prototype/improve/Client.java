@@ -9,7 +9,7 @@ package com.tanp.designpattern.prototype.improve;
 public class Client {
     public static void main(String[] args) {
         Sheep sheep = new Sheep("tom", 1, "白色");
-        sheep.setFriend(new Sheep("jack",2,"黑色"));
+        sheep.setFriend(new Sheep("jack", 2, "黑色"));
         System.out.println("原型模式完成对象的创建");
         //克隆
         Sheep sheep2 = (Sheep) sheep.clone();
