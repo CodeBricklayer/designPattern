@@ -14,7 +14,7 @@ public class LDFactory implements AbsFactory {
     @Override
     public Pizza createPizza(String orderType) {
         Pizza pizza = null;
-        if ("cheese".equals(orderType)){
+        if ("cheese".equals(orderType)) {
             pizza = new LDCheesePizza();
         } else if ("prepper".equals(orderType)) {
             pizza = new LDPepperPizza();
