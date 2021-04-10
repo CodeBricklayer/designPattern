@@ -3,7 +3,7 @@ package com.tanp.designpattern.factory.factorymethod.order;
 /**
  * @author CodeBricklayer
  * @date 2021/4/9 20:41
- * @description TODO
+ * @description 工厂方法的演示
  */
 public class FactoryMethod {
 
