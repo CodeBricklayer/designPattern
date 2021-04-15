@@ -9,19 +9,19 @@ import java.util.List;
  * @description 适配器
  */
 public class DispatchServlet {
-     static List<HandlerAdapter> handlerAdapters = new ArrayList<HandlerAdapter>();
+    static List<HandlerAdapter> handlerAdapters = new ArrayList<HandlerAdapter>();
 
-    public DispatchServlet(){
+    public DispatchServlet() {
         handlerAdapters.add(new AnnotationHandlerAdapter());
         handlerAdapters.add(new HttpHandlerAdapter());
         handlerAdapters.add(new SimpleHandlerAdapter());
     }
 
-    public void doDispatch(){
+    public void doDispatch() {
         //此处模拟Spring MVC从request取handler对象，
         //适配器可以获取到希望的Controller
         //HTTPController controller = new HttpController();
-        AnnotationController controller =new AnnotationController();
+        AnnotationController controller = new AnnotationController();
         //SimpleController controller = new SimpleController();
         //得到对应的适配器
         HandlerAdapter adapter = getHandler(controller);
@@ -29,10 +29,10 @@ public class DispatchServlet {
         adapter.handle(controller);
     }
 
-    public HandlerAdapter getHandler(Controller controller){
+    public HandlerAdapter getHandler(Controller controller) {
         //遍历：根据得到的controller（handler），返回对应的适配器
-        for (HandlerAdapter adapter: handlerAdapters){
-            if (adapter.supports(controller)){
+        for (HandlerAdapter adapter : handlerAdapters) {
+            if (adapter.supports(controller)) {
                 return adapter;
             }
         }

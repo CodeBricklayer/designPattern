@@ -7,20 +7,21 @@ package com.tanp.designpattern.adapter.springmvc;
  */
 public interface Controller {
 }
-class HttpController implements Controller{
-    public void doHttpHadler(){
+
+class HttpController implements Controller {
+    public void doHttpHadler() {
         System.out.println("http..");
     }
 }
 
-class SimpleController implements Controller{
-    public void doSimpleHandler(){
+class SimpleController implements Controller {
+    public void doSimpleHandler() {
         System.out.println("simple...");
     }
 }
 
-class AnnotationController implements Controller{
-    public void doAnnotationHandler(){
+class AnnotationController implements Controller {
+    public void doAnnotationHandler() {
         System.out.println("annotation...");
     }
 }

@@ -12,7 +12,7 @@ public interface HandlerAdapter {
 }
 
 //多种适配器
-class SimpleHandlerAdapter implements HandlerAdapter{
+class SimpleHandlerAdapter implements HandlerAdapter {
 
     @Override
     public boolean supports(Object handler) {
@@ -21,10 +21,11 @@ class SimpleHandlerAdapter implements HandlerAdapter{
 
     @Override
     public void handle(Object handler) {
-        ((SimpleController)handler).doSimpleHandler();
+        ((SimpleController) handler).doSimpleHandler();
     }
 }
-class AnnotationHandlerAdapter implements HandlerAdapter{
+
+class AnnotationHandlerAdapter implements HandlerAdapter {
 
     @Override
     public boolean supports(Object handler) {
@@ -33,11 +34,11 @@ class AnnotationHandlerAdapter implements HandlerAdapter{
 
     @Override
     public void handle(Object handler) {
-        ((AnnotationController)handler).doAnnotationHandler();
+        ((AnnotationController) handler).doAnnotationHandler();
     }
 }
 
-class HttpHandlerAdapter implements HandlerAdapter{
+class HttpHandlerAdapter implements HandlerAdapter {
 
     @Override
     public boolean supports(Object handler) {
@@ -46,6 +47,6 @@ class HttpHandlerAdapter implements HandlerAdapter{
 
     @Override
     public void handle(Object handler) {
-        ((HttpController)handler).doHttpHadler();
+        ((HttpController) handler).doHttpHadler();
     }
 }
