@@ -5,14 +5,14 @@ package com.tanp.designpattern.adapter.springmvc;
  * @date 2021/4/14 20:58
  * @description 定义一个Adapter接口
  */
-public interface HandlerAdpater {
+public interface HandlerAdapter {
     public boolean supports(Object handler);
 
     public void handle(Object handler);
 }
 
 //多种适配器
-class SimpleHandlerAdapter implements HandlerAdpater{
+class SimpleHandlerAdapter implements HandlerAdapter{
 
     @Override
     public boolean supports(Object handler) {
@@ -24,7 +24,7 @@ class SimpleHandlerAdapter implements HandlerAdpater{
         ((SimpleController)handler).doSimpleHandler();
     }
 }
-class AnnotationAdapter implements HandlerAdpater{
+class AnnotationHandlerAdapter implements HandlerAdapter{
 
     @Override
     public boolean supports(Object handler) {
@@ -37,7 +37,7 @@ class AnnotationAdapter implements HandlerAdpater{
     }
 }
 
-class HttpAdapter implements HandlerAdpater{
+class HttpHandlerAdapter implements HandlerAdapter{
 
     @Override
     public boolean supports(Object handler) {
